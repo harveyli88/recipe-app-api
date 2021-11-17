@@ -8,13 +8,13 @@ class AdminSiteTests(TestCase):
     def setUp(self):
         self.client = Client()
         self.admin_user = get_user_model().objects.create_superuser(
-            email= 'admin@testing.com',
-            password= 'password123'
+            email='admin@testing.com',
+            password='password123'
         )
         self.client.force_login(self.admin_user)
         self.user = get_user_model().objects.create_user(
-            email= 'test@testing.com',
-            password= 'password123',
+            email='test@testing.com',
+            password='password123',
             name='Test user full name'
         )
 
@@ -32,7 +32,7 @@ class AdminSiteTests(TestCase):
         # /admin/core/user/
         res = self.client.get(url)
 
-        self.assertEqual(res.status_code, 200)    
+        self.assertEqual(res.status_code, 200)
 
     def test_create_user_page(self):
         """Test that the create user page works"""
