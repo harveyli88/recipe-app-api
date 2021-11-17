@@ -2,7 +2,6 @@ from django.test import TestCase
 from django.contrib.auth import get_user, get_user_model
 
 
-
 class ModelTests(TestCase):
 
     def test_create_user_with_email_successful(self):
@@ -23,7 +22,6 @@ class ModelTests(TestCase):
         user = get_user_model().objects.create_user(email, 'test123')
 
         self.assertEqual(user.email, email.lower())
-
 
     def test_new_user_invalid_email(self):
         """Test creating user with no email raises error"""
